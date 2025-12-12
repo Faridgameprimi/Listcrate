@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PvP Legends — Crate List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- LOGO SERVER -->
+        <div class="logo-box">
+            <img src="images/logo/pvplegends.png" class="logo">
+        </div>
+
+        <!-- MENU CRATE -->
+        <div id="menu">
+
+            <div class="menu-btn" onclick="showCrate('basic-crate')">
+                <img src="images/logo/basic.png" class="menu-icon">
+                <div class="menu-text">
+                    <h3>Basic Crate</h3>
+                    <p>Loot item asas</p>
+                </div>
+            </div>
+
+            <div class="menu-btn" onclick="showCrate('rare-crate')">
+                <img src="images/logo/rare.png" class="menu-icon">
+                <div class="menu-text">
+                    <h3>Rare Crate</h3>
+                    <p>Loot jarang</p>
+                </div>
+            </div>
+
+            <div class="menu-btn" onclick="showCrate('legend-crate')">
+                <img src="images/logo/legend.png" class="menu-icon">
+                <div class="menu-text">
+                    <h3>Legend Crate</h3>
+                    <p>Loot legend unik</p>
+                </div>
+            </div>
+
+            <div class="menu-btn" onclick="showCrate('mythic-crate')">
+                <img src="images/logo/mythic.png" class="menu-icon">
+                <div class="menu-text">
+                    <h3>Mythic Crate</h3>
+                    <p>Loot mythic eksklusif</p>
+                </div>
+            </div>
+
+            <div class="menu-btn" onclick="showCrate('divine-crate')">
+                <img src="images/logo/divine.png" class="menu-icon">
+                <div class="menu-text">
+                    <h3>Divine Crate</h3>
+                    <p>Loot tertinggi</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- CRATE VIEWER -->
+        <div id="viewer" class="crate-viewer">
+            <h2 id="crateTitle"></h2>
+            <img id="crateImage" class="crate-img">
+            <div class="back-btn" onclick="goBack()">Kembali</div>
+        </div>
+
+    </div>
+
+
+<script>
+    function showCrate(crate) {
+        const titles = {
+            "basic-crate": "Basic Crate",
+            "rare-crate": "Rare Crate",
+            "legend-crate": "Legend Crate",
+            "mythic-crate": "Mythic Crate",
+            "divine-crate": "Divine Crate",
+        };
+
+        document.getElementById("menu").style.display = "none";
+        document.getElementById("viewer").style.display = "block";
+
+        document.getElementById("crateTitle").innerText = titles[crate];
+
+        // KEKAL MENGGUNAKAN NAMA FILE PNG LAMA
+        document.getElementById("crateImage").src = `images/crates/${crate}.png`;
+    }
+
+    function goBack() {
+        document.getElementById("viewer").style.display = "none";
+        document.getElementById("menu").style.display = "block";
+    }
+</script>
+
+</body>
+</html>
